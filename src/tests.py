@@ -59,5 +59,36 @@ class TestStringMethods(unittest.TestCase):
         self.assertEqual(exact_match, True)
         logger.OK(f"test_run_on_small_list_with_match - finished")
 
+    def test_duplicated_items_no_match(self):
+        ret, exact_match = FindIndex([1,95,95,95,200], 120, 10, logger)
+        self.assertEqual(exact_match, False)
+        self.assertEqual(ret['index'], [])
+        self.assertEqual(ret['value'], [])
+        logger.OK(f"test_duplicated_items_no_match - finished")
+
+    def test_duplicated_items_exact_match(self):
+        test_data = [1,95,95,95,200]
+        target_value = 95
+        ret, exact_match = FindIndex(test_data, target_value, 10, logger)
+        logger.DEBUG(f"{ret['index']}")
+        logger.DEBUG(f"{ret['value']}")
+        self.assertEqual(exact_match, True)
+        self.assertEqual(test_data[ret['index']], target_value)
+        self.assertEqual(test_data[ret['index']], ret['value'])
+        self.assertEqual(ret['value'], target_value)
+        logger.OK(f"test_duplicated_items_exact_match - finished")
+
+    def test_duplicated_items_range_match(self):
+        test_data = [1,95,95,95,200]
+        target_value = 100
+        ret, exact_match = FindIndex(test_data, target_value, 10, logger)
+        logger.DEBUG(f"{ret['index']}")
+        logger.DEBUG(f"{ret['value']}")
+        self.assertEqual(exact_match, False)
+        self.assertEqual(ret['index'], [1,2,3])
+        self.assertEqual(ret['value'], [95,95,95])
+        logger.OK(f"test_duplicated_items_exact_match - finished")
+
+
 if __name__ == '__main__':
     unittest.main()

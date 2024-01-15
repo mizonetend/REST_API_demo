@@ -42,12 +42,13 @@ So all search operations should be optimized for that particular slice.
 # Project
 
 ## Virtual environment
-The project is written in python3. To help in the installation and avoid interfere with other python projects - the solution uses **venv**.
+The project is written in python3 (3.9.6). To help in the installation and avoid interfere with other python projects - the solution uses **venv**.
 
 The `venv` module supports creating lightweight “virtual environments”, each with their own independent set of Python packages installed in their [`site`](https://docs.python.org/3/library/site.html#module-site "site: Module responsible for site-specific configuration.") directories. A virtual environment is created on top of an existing Python installation, known as the virtual environment’s “base” Python, and may optionally be isolated from the packages in the base environment, so only those explicitly installed in the virtual environment are available.
 
 ## Installation
 
+### !!!The project was tested with python 3.9.6!!!
 **The project requires the latest python3. If you do not have on your machine - please  [download python](https://www.python.org/downloads/)**
 - if do not have pip - [install pip](https://pip.pypa.io/en/stable/installation/#)
 
@@ -56,8 +57,9 @@ The `venv` module supports creating lightweight “virtual environments”, each
 
 ### manually
 - create new python virtual environment: ```python -m venv finder```
-- install requirements: ```pip install -r required_packages.txt``` 
-- you might need to update pip ```python -m pip install --upgrade pip```
+- you might need to update pip ```python -m pip install --upgrade
+- install requirements: ```pip install -r requirements.txt``` 
+
 
 Now you have a working environment.
 

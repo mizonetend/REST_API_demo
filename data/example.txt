@@ -1,0 +1,11 @@
+First you need to start the server:
+ * python finder.py
+
+You can test the Server with CURL:
+ * curl -X GET "http://127.0.0.1:{PORT}/index/150"
+
+ To run unit tests:
+ * python finder.py --unit_test
+
+Configurations:
+{CONFIG}

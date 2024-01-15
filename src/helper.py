@@ -34,12 +34,12 @@ def SelfCheck(config):
         logger.ERROR('.env tests failed')
 
     data_files = True
-    mandatoy_data_files = ['./input.txt', './src/server.py', './src/logger.py']
+    mandatoy_data_files = ['./.env', './src/server.py', './src/logger.py', './src/logic.py', './src/tests.py']
 
     for value in mandatoy_data_files:
         if (not exists(value)):
             data_files = False
-            logger.INFO(f"{value} not found")
+            logger.CRITICAL(f"{value} not found")
 
     if (data_files):
         logger.OK('resource tests passed')
@@ -94,6 +94,7 @@ def CheckData(config):
             if int(data[index - 1]) > int(data[index]):
                 bad_pairs.append([data[index - 1], data[index]])
                 bad_indexes.append([data[index - 1], data[index]])
+                logger.WARING(f"The input file ({input}) is not properly ordered: at index({index-1} - {index}) value({data[index-1]} !> {data[index]})")
                 res = False
                 logger.DEBUG(f"not sorted at: index({index-1}-{index}) value: ({data[index - 1]},{data[index]})")
     

@@ -46,13 +46,15 @@ logger.DEBUG(f"Args: {args}")
 
 # Execute Self Check function
 if (args.self_check):
-    SelfCheck(config)
-    exit(1)
+    if (SelfCheck(config) == True):
+        exit(0)
+    else:
+        exit(1)
 
 #Show example    
 if (args.example):
     Example(config)
-    exit(1)
+    exit(0)
 
 #Exacute unit tests
 if (args.unit_test):
@@ -66,7 +68,9 @@ if (args.unit_test):
         logger.OK(f"Unit Test finished")
     except:
         logger.ERROR(f"Failed to run unit test")
-    exit(1)
+        exit(1)
+    
+    exit(0)
 
 
 #creating and starting server

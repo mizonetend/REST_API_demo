@@ -2,12 +2,13 @@
 #
 # The following commands can be used.
 #
-# clean:	cleans the project
-# env:  	Source venv and environment files for testing
-# init:  	sets up environment and installs requirements
-# run:  	Executes the logic
-# example 	Present usefull information about the usage
-# test:  	Run unit_test
+# clean:		cleans the project
+# env:  		Source venv and environment files for testing
+# example 		Present usefull information about the usage
+# init:  		sets up environment and installs requirements
+# run:  		Executes the logic
+# selfcheck:	Validates the .env configurations and the system requirements
+# test:  		Run unit_test
 
 
 VENV_PATH='finder/bin'
@@ -43,8 +44,13 @@ test: ##Runs the unit tests
 test:
 	$(VENV_PATH)/python src/tests.py
 
+selfcheck: ##Runs selfcheck
+selfcheck:
+	$(VENV_PATH)/python finder.py --self_check
+	@echo 'selfcheck compleated'
+
 run: ##Runs the server
-run:
+run: selfcheck
 	$(VENV_PATH)/python finder.py
 
 example: ##Show usefull usage information

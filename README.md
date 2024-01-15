@@ -171,7 +171,7 @@ In summary, the complexity of the functions is logarithmic. **finder(n) = O(2\*(
 
 # Known issues and future optimizations
 
-- the code could do automatic self repair - eg.: changing port if it is already in use
+- The code could do automatic self repair - eg.: changing port if it is already in use
 - We can extend the code with try - catch blocks - to do proper error handling
 - Could use more sophisticated REST handling (application:json, standard responses, proper parameter handling, ...)
 - Could use openapi and swagger files to generate the REST on a very modern way
@@ -182,32 +182,32 @@ In summary, the complexity of the functions is logarithmic. **finder(n) = O(2\*(
 # Work log
 
 - **./finder.py** (1h)
--- added **argparse** - to handle parameters - to make the system user friendly
+  - added **argparse** - to handle parameters - to make the system user friendly
 - **./src/helper.py** (1h)
--- extended the system with some helper logic - eg.: SelfCheck and HelpFunction to show usage info for the tester
+  - extended the system with some helper logic - eg.: SelfCheck and HelpFunction to show usage info for the tester
 - **./src/logger.py** (1h)
--- using colorant - to colour the logs
--- not using in built logger - to show we can make our own logger - or extend any other in-built logger system
--- this is a logger demo
+  - using colorant - to colour the logs
+  - not using in built logger - to show we can make our own logger - or extend any other in-built logger system
+  - this is a logger demo
 - **./src/tests.py** (1h)
--- using "unittest" module
--- this is a basic unit test for the system
--- testing was more time then the implementation
+  - using "unittest" module
+  - this is a basic unit test for the system
+  - testing was more time then the implementation
 - **./src/logic.py** (2.5h)
--- had 2 iteration for the "FindIndex" function
--- the implementation was fast, but had some headaches with the testing
+  - had 2 iteration for the "FindIndex" function
+  - the implementation was fast, but had some headaches with the testing
 - **./src/server.py** (1.5h)
--- used "flask" to handle REST based service
--- spent some extra time to the response handling and testing
+  - used "flask" to handle REST based service
+  - spent some extra time to the response handling and testing
 - **./.env** (5minutes)
--- using .env as configuration file
--- could use a simple json as well, but .env is also an industrial standard on many areas
+  - using .env as configuration file
+  - could use a simple json as well, but .env is also an industrial standard on many areas
 - **./README.md** (2h)
--- spent significant time to make a small documentation for the project
+  - spent significant time to make a small documentation for the project
 - **testing** (3h)
--- spent tons of time to test the system and the extra functionalities
+  - spent tons of time to test the system and the extra functionalities
 - **MakeFile and environment testing** (2h)
--- not made MakeFile in the past year - and had to refresh my memory a bit.
--- testing the make file takes significant time.
+  - not made MakeFile in the past year - and had to refresh my memory a bit.
+  - testing the make file takes significant time.
 
 **TOTAL** ~2 days
